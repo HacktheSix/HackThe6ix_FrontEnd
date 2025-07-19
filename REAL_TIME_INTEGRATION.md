@@ -105,5 +105,3 @@ Your backend should return data in this format:
 2. Return data in the expected JSON format
 3. Add proper authentication if needed
 4. Test with the frontend API route
-
-The frontend will automatically detect when the backend is available and switch to real-time data! 
