@@ -22,7 +22,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto animate-slide-up-delay">
-              Upload models, compare performance, get carbon metrics. 
+              Upload models, compare performance, get carbon metrics for green, sustainable AI. 
               Built for ML teams.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up-delay-2">
