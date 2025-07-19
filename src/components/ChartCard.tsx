@@ -66,14 +66,14 @@ export function ChartCard({
           <div className={`flex items-center text-sm font-medium ${getChangeColor()}`}>
             {getChangeIcon()}
             <span className="ml-1">
-              {change > 0 ? "+" : ""}{change}%
+              {change > 0 ? "+" : ""}{Math.round(change)}%
             </span>
           </div>
         )}
       </div>
       
       <div className="mb-4">
-        <p className="text-2xl font-bold text-gray-900 dark:text-white">
+        <p className="text-2xl font-bold text-gray-900 dark:text-white break-words">
           {value}
         </p>
       </div>
