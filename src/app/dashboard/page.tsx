@@ -15,7 +15,8 @@ import {
   CheckCircleIcon,
   CurrencyDollarIcon,
   ServerIcon,
-  WifiIcon
+  WifiIcon,
+  CpuChipIcon
 } from "@heroicons/react/24/outline";
 import { ChartContainer, MetricCard } from "@/components/ChartCard";
 import {
@@ -57,6 +58,14 @@ interface LiveStats {
   errorRate: number;
 }
 
+interface SystemMetrics {
+  cpuUsage: number;
+  gpuUsage: number;
+  memoryUsage: number;
+  networkLatency: number;
+  activeConnections: number;
+}
+
 interface SustainabilityMetrics {
   totalCarbonSaved: number;
   greenScore: number;
@@ -76,6 +85,13 @@ export default function DashboardPage() {
     uptime: 99.8,
     responseTime: 245,
     errorRate: 0.2
+  });
+  const [systemMetrics, setSystemMetrics] = useState<SystemMetrics>({
+    cpuUsage: 74.79,
+    gpuUsage: 86.42,
+    memoryUsage: 79.38,
+    networkLatency: 35.22,
+    activeConnections: 14
   });
   const [sustainability, setSustainability] = useState<SustainabilityMetrics>({
     totalCarbonSaved: 12.8,
@@ -98,6 +114,21 @@ export default function DashboardPage() {
         errorRate: Math.max(0, Math.min(5, prev.errorRate + (Math.random() - 0.5) * 0.5))
       }));
     }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSystemMetrics(prev => ({
+        ...prev,
+        cpuUsage: Math.max(0, Math.min(100, prev.cpuUsage + (Math.random() - 0.5) * 10)),
+        gpuUsage: Math.max(0, Math.min(100, prev.gpuUsage + (Math.random() - 0.5) * 8)),
+        memoryUsage: Math.max(0, Math.min(100, prev.memoryUsage + (Math.random() - 0.5) * 6)),
+        networkLatency: Math.max(10, Math.min(100, prev.networkLatency + (Math.random() - 0.5) * 20)),
+        activeConnections: Math.max(1, Math.min(50, prev.activeConnections + Math.floor(Math.random() * 3) - 1))
+      }));
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -260,73 +291,50 @@ export default function DashboardPage() {
           />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <div className="lg:col-span-2">
-            <ChartContainer title="Real-time System Performance">
-              <Line
-                data={realTimeMetrics}
-                options={{
-                  responsive: true,
-                  maintainAspectRatio: false,
-                  plugins: {
-                    legend: {
-                      position: 'top' as const,
-                    },
-                  },
-                  scales: {
-                    y: {
-                      beginAtZero: true,
-                    },
-                  },
-                }}
-              />
-            </ChartContainer>
-          </div>
-          <div className="space-y-6">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
-                Live System Status
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">System Load</span>
-                  <span className={`text-sm font-medium ${
-                    liveStats.systemLoad > 80 ? 'text-red-600' : 
-                    liveStats.systemLoad > 60 ? 'text-yellow-600' : 'text-green-600'
-                  }`}>
-                    {liveStats.systemLoad}%
-                  </span>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          <div className="lg:col-span-2 animate-slide-up-delay-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white flex items-center">
+                  <ChartBarIcon className="w-5 h-5 mr-2 text-green-600" />
+                  Live System Metrics
+                </h3>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm text-green-600 dark:text-green-400">Live</span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Queue Length</span>
-                  <span className="text-sm font-medium text-gray-900 dark:text-white">
-                    {liveStats.queueLength}
-                  </span>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl animate-pulse-slow">
+                  <CpuChipIcon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">CPU</p>
+                  <p className="text-lg font-bold text-blue-600">{Math.round(systemMetrics.cpuUsage)}%</p>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Response Time</span>
-                  <span className="text-sm font-medium text-gray-900 dark:text-white">
-                    {liveStats.responseTime}ms
-                  </span>
+                <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl animate-pulse-slow">
+                  <BoltIcon className="w-6 h-6 text-purple-600 mx-auto mb-2" />
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">GPU</p>
+                  <p className="text-lg font-bold text-purple-600">{Math.round(systemMetrics.gpuUsage)}%</p>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Uptime</span>
-                  <span className="text-sm font-medium text-green-600">
-                    {liveStats.uptime}%
-                  </span>
+                <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-xl animate-pulse-slow">
+                  <GlobeAltIcon className="w-6 h-6 text-green-600 mx-auto mb-2" />
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Memory</p>
+                  <p className="text-lg font-bold text-green-600">{Math.round(systemMetrics.memoryUsage)}%</p>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Error Rate</span>
-                  <span className={`text-sm font-medium ${
-                    liveStats.errorRate > 2 ? 'text-red-600' : 
-                    liveStats.errorRate > 1 ? 'text-yellow-600' : 'text-green-600'
-                  }`}>
-                    {liveStats.errorRate}%
-                  </span>
+                <div className="text-center p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl animate-pulse-slow">
+                  <ClockIcon className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Latency</p>
+                  <p className="text-lg font-bold text-yellow-600">{Math.round(systemMetrics.networkLatency)}ms</p>
+                </div>
+                <div className="text-center p-4 bg-red-50 dark:bg-red-900/20 rounded-xl animate-pulse-slow">
+                  <ChartBarIcon className="w-6 h-6 text-red-600 mx-auto mb-2" />
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Connections</p>
+                  <p className="text-lg font-bold text-red-600">{systemMetrics.activeConnections}</p>
                 </div>
               </div>
             </div>
-
+          </div>
+          <div className="space-y-6">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
                 Sustainability Metrics

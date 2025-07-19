@@ -236,27 +236,27 @@ export default function ComparePage() {
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl animate-pulse-slow">
                   <CpuChipIcon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">CPU</p>
-                  <p className="text-lg font-bold text-blue-600">{Math.round(systemMetrics.cpuUsage)}%</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">CPU</p>
+                  <p className="text-lg font-bold text-blue-600">{systemMetrics.cpuUsage}%</p>
                 </div>
                 <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl animate-pulse-slow">
                   <BoltIcon className="w-6 h-6 text-purple-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">GPU</p>
-                  <p className="text-lg font-bold text-purple-600">{Math.round(systemMetrics.gpuUsage)}%</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">GPU</p>
+                  <p className="text-lg font-bold text-purple-600">{systemMetrics.gpuUsage}%</p>
                 </div>
                 <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-xl animate-pulse-slow">
                   <GlobeAltIcon className="w-6 h-6 text-green-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Memory</p>
-                  <p className="text-lg font-bold text-green-600">{Math.round(systemMetrics.memoryUsage)}%</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Memory</p>
+                  <p className="text-lg font-bold text-green-600">{systemMetrics.memoryUsage}%</p>
                 </div>
                 <div className="text-center p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl animate-pulse-slow">
                   <ClockIcon className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Latency</p>
-                  <p className="text-lg font-bold text-yellow-600">{Math.round(systemMetrics.networkLatency)}ms</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Latency</p>
+                  <p className="text-lg font-bold text-yellow-600">{systemMetrics.networkLatency}ms</p>
                 </div>
                 <div className="text-center p-4 bg-red-50 dark:bg-red-900/20 rounded-xl animate-pulse-slow">
                   <ChartBarIcon className="w-6 h-6 text-red-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Connections</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Connections</p>
                   <p className="text-lg font-bold text-red-600">{systemMetrics.activeConnections}</p>
                 </div>
               </div>
