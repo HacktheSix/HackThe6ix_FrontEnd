@@ -50,7 +50,7 @@ export default function UploadPage() {
           <div className="mx-auto h-16 w-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 animate-bounce">
             <CloudArrowUpIcon className="h-10 w-10 text-white" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up font-display">
             Upload & Compare Models
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-slide-up-delay">
@@ -61,7 +61,7 @@ export default function UploadPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-8 animate-slide-up-delay-2">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-8">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center font-display">
                 <CloudArrowUpIcon className="w-6 h-6 mr-2 text-blue-600" />
                 Upload Video File
               </h2>
@@ -86,7 +86,7 @@ export default function UploadPage() {
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-8">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center font-display">
                 <ArrowsRightLeftIcon className="w-5 h-5 mr-2 text-green-600" />
                 Select Models for Comparison
               </h3>

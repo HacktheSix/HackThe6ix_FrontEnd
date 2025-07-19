@@ -139,7 +139,7 @@ export function ChartContainer({ title, children, className = "" }: ChartContain
     <div className={`bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 ${className}`}>
       <div className="flex items-center mb-6">
         <ChartBarIcon className="h-5 w-5 text-gray-500 mr-2" />
-        <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white font-display">
           {title}
         </h3>
       </div>

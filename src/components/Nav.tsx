@@ -6,7 +6,7 @@ import {
   HomeIcon, 
   CloudArrowUpIcon, 
   ChartBarIcon, 
-  ArrowsRightLeftIcon 
+  ArrowsRightLeftIcon
 } from "@heroicons/react/24/outline";
 
 interface NavLinkProps {
@@ -43,7 +43,7 @@ export function Nav() {
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
               <ArrowsRightLeftIcon className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-xl text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            <span className="font-bold text-xl text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors font-display">
               ModelCompare
             </span>
           </Link>

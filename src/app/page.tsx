@@ -15,15 +15,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 animate-pulse-slow"></div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 animate-slide-up">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up font-display">
               Compare YOLO & Vision Models
               <span className="block text-blue-600 dark:text-blue-400 animate-gradient bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Like Never Before
               </span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up-delay">
-              Upload your models, run comprehensive comparisons, and get detailed analytics 
-              with carbon-aware metrics. Perfect for ML teams and researchers.
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto animate-slide-up-delay">
+              Upload models, compare performance, get carbon metrics. 
+              Built for ML teams.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up-delay-2">
               <Link
@@ -52,7 +52,7 @@ export default function Home() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up font-display">
               Powerful Features for Model Analysis
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-slide-up-delay">
@@ -146,7 +146,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse-slow"></div>
         <div className="relative max-w-4xl mx-auto text-center animate-fade-in">
-          <h2 className="text-3xl font-bold text-white mb-4 animate-slide-up">
+          <h2 className="text-3xl font-bold text-white mb-4 animate-slide-up font-display">
             Ready to Compare Your Models?
           </h2>
           <p className="text-xl text-blue-100 mb-8 animate-slide-up-delay">

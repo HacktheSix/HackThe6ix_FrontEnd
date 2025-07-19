@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { 
-  PlayIcon, 
+  PlayIcon,
   PauseIcon, 
   ArrowsPointingOutIcon,
   BoltIcon,
@@ -111,9 +111,9 @@ export default function ComparePage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 animate-fade-in">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up">
-            Model Comparison
-          </h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up font-display">
+              Model Comparison
+            </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 animate-slide-up-delay">
             YOLOv8n vs YOLOv8l - Real-time performance analysis
           </p>
@@ -126,7 +126,7 @@ export default function ComparePage() {
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center">
                   <BoltIcon className="w-5 h-5 mr-2 text-blue-600" />
                   Model A: YOLOv8n
-                </h2>
+              </h2>
                 <div className="flex items-center space-x-2">
                   <button className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
                     <ArrowsPointingOutIcon className="w-4 h-4" />
@@ -139,7 +139,7 @@ export default function ComparePage() {
                   <PlayIcon className="w-12 h-12 text-gray-400 mx-auto mb-2" />
                   <p className="text-sm text-gray-500 dark:text-gray-400">Video Preview</p>
                 </div>
-              </div>
+                </div>
 
               <div className="grid grid-cols-2 gap-4">
                 {Object.entries(modelAStats).map(([key, value]) => (
@@ -180,15 +180,15 @@ export default function ComparePage() {
                   <button className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
                     <ArrowsPointingOutIcon className="w-4 h-4" />
                   </button>
+                  </div>
                 </div>
-              </div>
-              
+
               <div className="aspect-video bg-gray-100 dark:bg-gray-700 rounded-xl mb-4 flex items-center justify-center animate-pulse-slow">
                 <div className="text-center">
                   <PlayIcon className="w-12 h-12 text-gray-400 mx-auto mb-2" />
                   <p className="text-sm text-gray-500 dark:text-gray-400">Video Preview</p>
                 </div>
-              </div>
+                </div>
 
               <div className="grid grid-cols-2 gap-4">
                 {Object.entries(modelBStats).map(([key, value]) => (
@@ -216,14 +216,14 @@ export default function ComparePage() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
+              </div>
+            </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
           <div className="lg:col-span-2 animate-slide-up-delay-2">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white flex items-center">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white flex items-center font-display">
                   <ChartBarIcon className="w-5 h-5 mr-2 text-green-600" />
                   Live System Metrics
                 </h3>
@@ -253,15 +253,15 @@ export default function ComparePage() {
                   <ClockIcon className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Latency</p>
                   <p className="text-lg font-bold text-yellow-600 break-words">{Math.round(systemMetrics.networkLatency)}ms</p>
-                </div>
+                  </div>
                 <div className="text-center p-4 bg-red-50 dark:bg-red-900/20 rounded-xl animate-pulse-slow border border-red-200 dark:border-red-800">
                   <ChartBarIcon className="w-6 h-6 text-red-600 mx-auto mb-2" />
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Connections</p>
                   <p className="text-lg font-bold text-red-600 break-words">{systemMetrics.activeConnections}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
           <div className="animate-slide-up-delay-3">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6">
@@ -297,12 +297,12 @@ export default function ComparePage() {
                   );
                 })}
               </div>
+              </div>
             </div>
           </div>
-        </div>
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6 animate-fade-in-up">
-          <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white flex items-center">
               <PlayIcon className="w-5 h-5 mr-2 text-green-600" />
               Video Controls
@@ -316,15 +316,15 @@ export default function ComparePage() {
                 className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105"
               >
                 {isPlaying ? <PauseIcon className="w-4 h-4" /> : <PlayIcon className="w-4 h-4" />}
-              </button>
-            </div>
-          </div>
-          
+                  </button>
+                </div>
+              </div>
+              
           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
             <div
               className="bg-blue-600 h-2 rounded-full transition-all duration-300"
               style={{ width: `${(currentTime / duration) * 100}%` }}
-            />
+              />
           </div>
         </div>
       </div>

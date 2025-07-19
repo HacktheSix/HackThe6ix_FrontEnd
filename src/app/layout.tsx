@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Courier_Prime, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const courierPrime = Courier_Prime({
+  variable: "--font-courier-prime",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const pressStart2P = Press_Start_2P({
+  variable: "--font-press-start-2p",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gray-50 dark:bg-gray-900`}
+        className={`${courierPrime.variable} ${pressStart2P.variable} antialiased min-h-screen bg-gray-50 dark:bg-gray-900`}
       >
         <Nav />
         <main className="min-h-screen">

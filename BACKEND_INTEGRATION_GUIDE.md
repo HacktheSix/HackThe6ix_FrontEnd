@@ -1,7 +1,7 @@
 # Backend Integration Guide
 
 ## Overview
-This document provides comprehensive integration requirements for connecting the ModelCompare frontend with your backend services, Supabase database, and Auth0 authentication.
+This document provides integration requirements for connecting the frontend backend services, Supabase database, and Auth0 authentication.
 
 ## 🏗️ Architecture Overview
 
@@ -638,5 +638,3 @@ For integration questions or issues:
 2. Review the `REAL_TIME_INTEGRATION.md` file for frontend-specific details
 3. Test with the provided mock data endpoints
 4. Use the WebSocket connection for real-time updates
-
-The frontend is designed to gracefully handle backend unavailability and will automatically switch to real-time data when your backend is ready! 
