@@ -28,8 +28,8 @@ interface UploadDropzoneProps {
 
 export function UploadDropzone({ 
   onFilesUploaded, 
-  maxFiles = 5,
-  acceptedTypes = [".onnx", ".pt", ".pth", ".weights", ".tflite", ".pb"]
+  maxFiles = 1,
+  acceptedTypes = [".mp4", ".avi", ".mov", ".mkv", ".webm"]
 }: UploadDropzoneProps) {
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [isUploading, setIsUploading] = useState(false);
@@ -39,7 +39,7 @@ export function UploadDropzone({
       id: `${Date.now()}-${index}`,
       name: file.name,
       size: file.size,
-      type: file.type || "application/octet-stream",
+      type: file.type || "video/mp4",
       status: "uploading" as const,
       progress: 0
     }));
@@ -47,7 +47,6 @@ export function UploadDropzone({
     setUploadedFiles(prev => [...prev, ...newFiles]);
     setIsUploading(true);
 
-    // Simulate upload process
     newFiles.forEach((file, index) => {
       const interval = setInterval(() => {
         setUploadedFiles(prev => 
@@ -73,13 +72,14 @@ export function UploadDropzone({
   const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({
     onDrop,
     accept: {
-      'application/octet-stream': acceptedTypes,
-      'application/x-onnx': ['.onnx'],
-      'application/x-pytorch': ['.pt', '.pth'],
-      'application/x-tensorflow': ['.pb', '.tflite']
+      'video/mp4': ['.mp4'],
+      'video/avi': ['.avi'],
+      'video/quicktime': ['.mov'],
+      'video/x-matroska': ['.mkv'],
+      'video/webm': ['.webm']
     },
     maxFiles,
-    maxSize: 500 * 1024 * 1024, // 500MB
+    maxSize: 500 * 1024 * 1024,
   });
 
   const removeFile = (fileId: string) => {
@@ -96,7 +96,6 @@ export function UploadDropzone({
 
   return (
     <div className="space-y-6">
-      {/* Dropzone */}
       <div
         {...getRootProps()}
         className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors cursor-pointer ${
@@ -112,23 +111,22 @@ export function UploadDropzone({
         <div className="space-y-2">
           <p className="text-lg font-medium text-gray-900 dark:text-white">
             {isDragActive
-              ? "Drop your model files here"
-              : "Drag & drop model files here"}
+              ? "Drop your video file here"
+              : "Drag & drop video file here"}
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             or click to browse files
           </p>
           <p className="text-xs text-gray-400 dark:text-gray-500">
-            Supported formats: {acceptedTypes.join(", ")} (max {maxFiles} files, 500MB each)
+            Supported formats: {acceptedTypes.join(", ")} (max {maxFiles} file, 500MB)
           </p>
         </div>
       </div>
 
-      {/* Uploaded Files List */}
       {uploadedFiles.length > 0 && (
         <div className="space-y-3">
           <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-            Uploaded Files ({uploadedFiles.length}/{maxFiles})
+            Uploaded Video ({uploadedFiles.length}/{maxFiles})
           </h3>
           <div className="space-y-2">
             {uploadedFiles.map((file) => (
@@ -149,7 +147,6 @@ export function UploadDropzone({
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  {/* Status Icon */}
                   {file.status === "uploading" && (
                     <div className="flex items-center space-x-2">
                       <div className="w-4 h-4 border-2 border-blue-200 border-t-blue-600 rounded-full animate-spin" />
@@ -165,7 +162,6 @@ export function UploadDropzone({
                     <ExclamationTriangleIcon className="h-5 w-5 text-red-500" />
                   )}
 
-                  {/* Remove Button */}
                   <button
                     onClick={() => removeFile(file.id)}
                     className="p-1 text-gray-400 hover:text-red-500 transition-colors"
@@ -180,7 +176,6 @@ export function UploadDropzone({
         </div>
       )}
 
-      {/* Progress Bar for Overall Upload */}
       {isUploading && (
         <div className="space-y-2">
           <div className="flex justify-between text-sm">

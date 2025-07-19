@@ -11,7 +11,6 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
@@ -45,7 +44,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -58,7 +56,6 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
                 <CloudArrowUpIcon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
@@ -72,7 +69,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Feature 2 */}
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
               <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-4">
                 <ArrowsRightLeftIcon className="w-6 h-6 text-green-600 dark:text-green-400" />
@@ -86,7 +82,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Feature 3 */}
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
               <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
                 <ChartBarIcon className="w-6 h-6 text-purple-600 dark:text-purple-400" />
@@ -100,7 +95,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Feature 4 */}
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
               <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center mb-4">
                 <BoltIcon className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
@@ -114,7 +108,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Feature 5 */}
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
               <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-4">
                 <GlobeAltIcon className="w-6 h-6 text-red-600 dark:text-red-400" />
@@ -128,7 +121,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Feature 6 */}
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
               <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4">
                 <ShieldCheckIcon className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
@@ -145,7 +137,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
