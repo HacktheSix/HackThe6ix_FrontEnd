@@ -50,7 +50,7 @@ export default function ComparePage() {
   const [duration, setDuration] = useState(120);
   const [modelAStats, setModelAStats] = useState<ModelStats>({
     accuracy: 87.3,
-    speed: 95,
+    speed: 59,
     memory: 2.1,
     carbon: 3.2,
     greenScore: 82,
@@ -60,7 +60,7 @@ export default function ComparePage() {
   });
   const [modelBStats, setModelBStats] = useState<ModelStats>({
     accuracy: 91.7,
-    speed: 65,
+    speed: 59,
     memory: 4.8,
     carbon: 7.1,
     greenScore: 68,

@@ -292,7 +292,7 @@ export default function Home() {
                     >
                       <CloudArrowUpIcon className="w-6 h-6" />
                     </motion.div>
-                    Upload Your Models
+                    Upload Media & Models
                   </span>
                 </Link>
               </motion.div>
