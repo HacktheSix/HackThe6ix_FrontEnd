@@ -16,7 +16,7 @@ const pressStart2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "ModelCompare - YOLO & Vision Model Comparison Platform",
+  title: "ComparaVision - YOLO & Vision Model Comparison Platform",
   description: "Upload, compare, and analyze YOLO and vision models with side-by-side analysis and carbon-aware metrics",
   keywords: "YOLO, computer vision, model comparison, machine learning, AI, model analysis",
 };

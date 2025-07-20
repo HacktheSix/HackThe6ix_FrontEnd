@@ -78,10 +78,10 @@ export default function GetStartedPage() {
             <GlobeAltIcon className="h-10 w-10 text-white" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 animate-slide-up">
-            Get Started with ModelCompare
+            Get Started with ComparaVision
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-slide-up-delay">
-            Join thousands of ML teams who trust ModelCompare for their model evaluation needs
+            Join thousands of ML teams who trust ComparaVision for their model evaluation needs
           </p>
         </div>
 
@@ -295,7 +295,7 @@ export default function GetStartedPage() {
 
             <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl p-6 border border-green-200 dark:border-green-800">
               <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
-                Why Choose ModelCompare?
+                Why Choose ComparaVision?
               </h4>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
